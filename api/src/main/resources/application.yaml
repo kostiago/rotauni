@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: rotauni-api
+  datasource:
+    url: ${ROTAUNI_DB_URL:jdbc:postgresql://localhost:5432/rotauni}
+    username: ${ROTAUNI_DB_USUARIO:rotauni}
+    password: ${ROTAUNI_DB_SENHA:rotauni}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate

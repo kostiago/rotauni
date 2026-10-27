@@ -1,12 +1,14 @@
 package br.com.rotauni.api.municipio;
 
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 @Entity
@@ -42,8 +44,9 @@ public class Municipio {
         this.codigoIbge = codigoIbge;
     }
 
+    @PrePersist 
     void aoCriar(){
-        this.criandoEm = Instant.now();
+        this.criandoEm = Instant.now().truncatedTo(ChronoUnit.MICROS);
     }
 
     public void ativar(){

@@ -1,0 +1,40 @@
+@base = http://localhost:8080/api
+
+### Cadastrar Pombal
+POST {{base}}/municipios
+Content-Type: application/json
+
+{
+  "nome": "Pombal",
+  "uf": "pb",
+  "codigoIbge": "2512002"
+}
+
+### Listar
+GET {{base}}/municipios
+
+### Buscar por id
+GET {{base}}/municipios/2
+
+### Erro: dados inválidos
+POST {{base}}/municipios
+Content-Type: application/json
+
+{
+  "nome": "",
+  "uf": "Paraíba",
+  "codigoIbge": "123"
+}
+
+### Erro: código IBGE duplicado (rode depois do primeiro)
+POST {{base}}/municipios
+Content-Type: application/json
+
+{
+  "nome": "Pombal de novo",
+  "uf": "PB",
+  "codigoIbge": "2512002"
+}
+
+### Erro: id inexistente
+GET {{base}}/municipios/999

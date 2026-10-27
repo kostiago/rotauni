@@ -1,0 +1,19 @@
+# Sistema operacional
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Editores
+.idea/
+.vscode/
+*.iml
+
+# Segredos e variáveis de ambiente locais
+.env
+.env.*
+!.env.exemplo
+
+# Node (painel e app)
+node_modules/
+dist/
+.expo/

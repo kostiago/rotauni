@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: rotauni-postgres
+    environment:
+      POSTGRES_DB: rotauni
+      POSTGRES_USER: rotauni
+      POSTGRES_PASSWORD: rotauni
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-dados:/var/lib/postgresql/data
+
+volumes:
+  postgres-dados:

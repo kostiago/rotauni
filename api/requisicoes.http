@@ -38,3 +38,10 @@ Content-Type: application/json
 
 ### Erro: id inexistente
 GET {{base}}/municipios/999
+
+
+### Erro: JSON malformado
+POST {{base}}/municipios
+Content-Type: application/json
+
+{ "nome": "Sem fechar

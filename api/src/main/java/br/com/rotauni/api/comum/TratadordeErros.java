@@ -28,7 +28,7 @@ public class TratadordeErros extends ResponseEntityExceptionHandler {
     @ExceptionHandler(RecursoNaoEncontradoException.class)
     public ProblemDetail tratarNaoEncontrado(RecursoNaoEncontradoException ex) {
         var problema = ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
-        problema.setTitle("Recurso não encotrado!");
+        problema.setTitle("Recurso não encontrado");
 
         return problema;
     }
